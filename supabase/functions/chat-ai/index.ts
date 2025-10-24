@@ -47,25 +47,25 @@ serve(async (req) => {
       `${s.exam.course_code} (${s.exam.name}) is scheduled in ${s.room.name} (${s.room.building}) on ${s.timeslot.date} from ${s.timeslot.start_time} to ${s.timeslot.end_time}`
     ).join("\n") || "No schedules available yet.";
 
-    // Call Lovable AI Gateway
-    const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    if (!LOVABLE_API_KEY) {
-      throw new Error("LOVABLE_API_KEY not configured");
+    // Call OpenAI API
+    const OPENAI_API_KEY = Deno.env.get("OPENAI_API_KEY");
+    if (!OPENAI_API_KEY) {
+      throw new Error("OPENAI_API_KEY not configured");
     }
 
-    const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${LOVABLE_API_KEY}`,
+        "Authorization": `Bearer ${OPENAI_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "google/gemini-2.5-flash",
+        model: "gpt-3.5-turbo",
         messages: [
           {
             role: "system",
             content: `You are a helpful AI assistant for an exam scheduling system. You can answer questions about exam schedules, help with queries about specific exams, rooms, or timeslots.
-            
+
 Current schedule context:
 ${scheduleContext}
 

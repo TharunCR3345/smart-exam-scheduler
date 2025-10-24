@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
+# Exam Scheduler
 
-## Project info
+An intelligent exam scheduling application built with React, TypeScript, and Supabase. This application helps educational institutions manage exam schedules efficiently with AI-powered assistance.
 
-**URL**: https://lovable.dev/projects/1bd14bd3-5186-41ee-a062-6cd587ae1073
+## Features
 
-## How can I edit this code?
+- **Exam Management**: Add and manage exam details including course codes, names, and student counts
+- **Room Management**: Configure available rooms with capacity information
+- **Timeslot Management**: Define available time slots for scheduling
+- **Automatic Scheduling**: Intelligent algorithm to optimize exam scheduling
+- **AI Chat Assistant**: Get help with scheduling queries using OpenAI integration
+- **Data Import/Export**: Support for CSV and Excel file formats
+- **PDF Reports**: Generate and export schedule reports
+- **User Authentication**: Secure user management with Supabase Auth
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18, TypeScript, Vite
+- **UI Framework**: shadcn/ui, Tailwind CSS
+- **Backend**: Supabase (PostgreSQL, Auth, Edge Functions)
+- **AI Integration**: OpenAI API
+- **Charts**: Recharts
+- **Forms**: React Hook Form with Zod validation
+- **State Management**: TanStack Query
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1bd14bd3-5186-41ee-a062-6cd587ae1073) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18+ and npm
+- Supabase account and project
+- OpenAI API key
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+1. Clone the repository:
+```bash
 git clone <YOUR_GIT_URL>
+cd exam-scheduler
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+3. Set up environment variables:
+Create a `.env.local` file with your Supabase and OpenAI credentials:
+```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+OPENAI_API_KEY=your_openai_api_key
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Database Setup
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Run the SQL migrations in the `supabase/migrations` directory to set up the database schema.
 
-**Use GitHub Codespaces**
+## Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+This project can be deployed to any static hosting service like Vercel, Netlify, or AWS S3. Make sure to configure the environment variables in your deployment platform.
 
-## What technologies are used for this project?
+## Contributing
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1bd14bd3-5186-41ee-a062-6cd587ae1073) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting
+5. Submit a pull request
