@@ -1,4 +1,4 @@
-# Exam Scheduler
+# Smart Exam Scheduler
 
 An intelligent exam scheduling application built with React, TypeScript, and Supabase. This application helps educational institutions manage exam schedules efficiently with AI-powered assistance.
 
