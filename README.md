@@ -2,6 +2,8 @@
 
 An intelligent exam scheduling application built with React, TypeScript, and Supabase. This application helps educational institutions manage exam schedules efficiently with AI-powered assistance.
 
+**Author:** [Tharun C R](https://github.com/TharunCR3345)
+
 ## Features
 
 - **Exam Management**: Add and manage exam details including course codes, names, and student counts
